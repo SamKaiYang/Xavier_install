@@ -11,7 +11,8 @@ $ git clone https://github.com/jetsonhacks/buildLibrealsense2Xavier
 
 $ cd buildLibrealsense2Xavier
 
-#Build Kernel and Modules
+Build Kernel and Modules
+-----------------
 
 **The first step is to build the needed modules and a new kernel. Also, in order to have the Xavier understand the different video formats, there are some patches to apply to the module source code.**
 
@@ -23,7 +24,8 @@ $ cd buildLibrealsense2Xavier
 
 $ ./buildPatchedKernel.sh
 
-#Flashing the Kernel Image
+Flashing the Kernel Image
+-----------------
 
 **Once the script is finished, you can now flash the new Image on to the Jetson. Use a file transfer utility such as scp or ftp to transfer the new Image file to the host PC with the JetPack installer. Sneakernet works too.**
 
@@ -35,23 +37,27 @@ $ ./buildPatchedKernel.sh
 
 $ sudo ./flash.sh -k kernel jetson-xavier mmcblk0p1
 
-#Build librealsense 2
+Build librealsense 2
+-----------------
 
 $ git clone https://github.com/jetsonhacks/installRealSenseSDK.git
 
 $ ./installLibrealsense.sh
 
-#install finish,test realsense driver
+install finish,test realsense driver
+-----------------
 
 $ ./realsense-viewer
 
-#You may remove all the kernel source using the provided convenience script 'removeAllKernelSources.sh'.
+You may remove all the kernel source using the provided convenience script 'removeAllKernelSources.sh'.
+-----------------
 
 $ cd buildLibrealsense2Xavier
 
 $ ./removeAllKernelSources.sh
 
-#realsense-ros using
+realsense-ros using
+-----------------
 
 $ mkdir -p ~/catkin_ws/src
 
@@ -71,7 +77,8 @@ $ cd ~/catkin_ws
 
 $ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 
-#Intel Realsense D435i testing
+Intel Realsense D435i testing
+-----------------
 
 $ roslaunch realsense2_camera demo_pointcloud.launch
 
