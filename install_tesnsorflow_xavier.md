@@ -1,4 +1,5 @@
-#-------------Prerequisites and Dependencies---------------------
+#Prerequisites and Dependencies
+
 $ sudo apt-get update
 
 $ sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev
@@ -11,10 +12,12 @@ $ sudo pip3 install -U numpy==1.16.1 future==0.17.1 mock==3.0.5 h5py==2.9.0 kera
 
 $ sudo pip3 install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.13.1+nv19.3
 
-#---------------Verifying The Installation-------------------
-To verify that TensorFlow has been successfully installed on Jetson AGX Xavier, you’ll need to launch a Python prompt and import TensorFlow.
+#Verifying The Installation
+
+**To verify that TensorFlow has been successfully installed on Jetson AGX Xavier, you’ll need to launch a Python prompt and import TensorFlow.**
 
 $ python3
->>> import tensorflow
 
-If TensorFlow was installed correctly, this command should execute without error.
+'>>> import tensorflow'
+
+**If TensorFlow was installed correctly, this command should execute without error.**

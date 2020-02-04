@@ -14,7 +14,7 @@ Nvidia-Jetson-AGX-Xavier-TX2-JetPack-4.2配置流程與基礎設定(刷機流程
 1. Jetson AGX Xavier
 2. 螢幕、網路線、鍵盤組
 3. 一台Ubuntu電腦
->備註:Ubuntu中開PPT我們有遇到直接複製指令下來，貼上terminal時，指令會失敗，所以後面如果有遇到要打指令的地方建議手打。
+>備註:Ubuntu中開此github上我們有遇到直接複製指令下來，貼上terminal時，指令會失敗，所以後面如果有遇到要打指令的地方建議手打。
 
 # 環境設定
 		
@@ -89,3 +89,15 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 `sudo nvpmodel –q`
 
 `sudo nvpmodel -m 0`
+
+
+# 安裝相關套件
+建議安裝順序
+1. 安裝ROS
+		請詳閱[install_realsense_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_realsense_xavier.md)
+2. 安裝Realsense
+		請詳閱[install_realsense_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_realsense_xavier.md)
+3. 改USB頻寬
+		請詳閱[usb_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/usb_xavier.md)
+3. 安裝Tensorflow
+		請詳閱[install_tesnsorflow_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_tesnsorflow_xavier.md)
