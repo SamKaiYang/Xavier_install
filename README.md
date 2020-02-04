@@ -76,7 +76,7 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 <img src="https://github.com/SamKaiYang/Xavier_install/blob/master/image/a15.jpg" width="700">
 <img src="https://github.com/SamKaiYang/Xavier_install/blob/master/image/a16.png" width="700">
 
-# 常遇到的問題
+# 刷機常遇到的問題
 如若在上一步失敗，那最大的問題大概就是出在你的網路問題，可以在terminal 打ifconfig 看一下你兩個平台接的網路，因為它在灌OS的時候不會有問題，通常都是下一步安裝CUDA、Opencv這邊會出問題。
 如果真的失敗可能就要重頭再來一次，然後確認一下你的網路是否有連接正確，通常這一步都要多嘗試幾次才會過。
 # Xavier基礎設定

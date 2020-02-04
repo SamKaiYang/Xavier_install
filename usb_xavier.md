@@ -1,20 +1,57 @@
-#-------------Prerequisites and Dependencies---------------------
-$ sudo apt-get update
+Replace xusb_sil_rel_fw_Xavier
+==================
 
-$ sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev
+步驟1:
+---
 
-$ sudo apt-get install python3-pip
+**複製[xusb_sil_rel_fw_Xavier](https://github.com/SamKaiYang/Xavier_install/blob/master/xusb_sil_rel_fw_Xavier)此檔案到隨身碟內(自備一個隨身碟並連接在Xavier上)**
 
-$ sudo pip3 install -U pip testresources setuptools
+步驟2:
+---
 
-$ sudo pip3 install -U numpy==1.16.1 future==0.17.1 mock==3.0.5 h5py==2.9.0 keras_preprocessing==1.0.5 keras_applications==1.0.8 gast==0.2.2 enum34 futures protobuf
+**備份原始文件**
 
-$ sudo pip3 install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.13.1+nv19.3
+$ sudo su
+$ mv /lib/firmware/tegra19x_xusb_firmware /lib/firmware/tegra19x_xusb_firmware_ori
 
-#---------------Verifying The Installation-------------------
-To verify that TensorFlow has been successfully installed on Jetson AGX Xavier, you’ll need to launch a Python prompt and import TensorFlow.
+步驟3:
+---
 
-$ python3
->>> import tensorflow
+**複製xusb_sil_rel_fw_Xavier到路徑/lib/firmware內**
 
-If TensorFlow was installed correctly, this command should execute without error.
+$ cp <WHERE_YOU_MOUNT_PENDRIVE>/xusb_sil_rel_fw_Xavier /lib/firmware/tegra19x_xusb_firmware
+
+步驟4:
+---
+
+**重新開機**
+
+$ sudo reboot
+
+步驟5:
+---
+
+**為確認步驟可省略**
+The fw timestamp should be:
+        root@tegra-ubuntu:/sys/class/tegra-firmware/3610000.xhci# cat version 
+        3610000.xhci: Firmware timestamp: 2019-07-16 08:23:26 UTC, Version: 60.05 release
+Remove all the USB device and confirm that xhci enters ELPG
+	Check "tegra-xusb 3610000.xhci: entering ELPG done" in kernel log
+
+步驟6:
+---
+
+**增加falcon clock頻率**
+
+$ sudo su
+
+$ cd /sys/kernel/debug/bpmp/debug/clk/xusb_falcon
+
+$ echo 1 > state
+
+$ echo 408000000 > rate
+
+$ cat rate
+		確認顯示是否為408000000
+
+**Fininsh!!  即可連接Realsense看是否還有溢出問題**
