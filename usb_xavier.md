@@ -31,12 +31,17 @@ $ sudo reboot
 步驟5:
 ---
 
-**為確認步驟可省略**
+**此為確認步驟 可省略**
+
 The fw timestamp should be:
-        root@tegra-ubuntu:/sys/class/tegra-firmware/3610000.xhci# cat version 
-        3610000.xhci: Firmware timestamp: 2019-07-16 08:23:26 UTC, Version: 60.05 release
+        
+		root@tegra-ubuntu:/sys/class/tegra-firmware/3610000.xhci# cat version 
+        
+		3610000.xhci: Firmware timestamp: 2019-07-16 08:23:26 UTC, Version: 60.05 release
+
 Remove all the USB device and confirm that xhci enters ELPG
-	Check "tegra-xusb 3610000.xhci: entering ELPG done" in kernel log
+	
+		Check "tegra-xusb 3610000.xhci: entering ELPG done" in kernel log
 
 步驟6:
 ---
@@ -52,6 +57,7 @@ $ echo 1 > state
 $ echo 408000000 > rate
 
 $ cat rate
+
 		確認顯示是否為408000000
 
 **Fininsh!!  即可連接Realsense看是否還有溢出問題**
