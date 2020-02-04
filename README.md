@@ -21,7 +21,7 @@ Nvidia-Jetson-AGX-Xavier-TX2-JetPack-4.2配置流程與基礎設定(刷機流程
 JetPack 是用來快速初始化Xavier、TX2的軟體，由Nivdia官方發行。
 在Ubuntu的電腦上，下載 Nvidia SDK Manager。
 
-<img src="https://github.com/SamKaiYang/Xavier_install/blob/master/image/a1.png" width="100" height="100">
+<img src="https://github.com/SamKaiYang/Xavier_install/blob/master/image/a1.png" width="500" height="500">
 
 ![image](https://github.com/SamKaiYang/Xavier_install/blob/master/image/a1.png)
 		
