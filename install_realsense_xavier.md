@@ -2,7 +2,8 @@
 > Starting with L4T 32.2.1 (JetPack 4.2) on the NVIDIA Jetsons
 > check kernel version 4.9 
 
-#clone buildLibrealsense2Xavier file
+clone buildLibrealsense2Xavier file
+-----------------
 
 $ cd $HOME
 

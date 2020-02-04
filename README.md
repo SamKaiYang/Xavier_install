@@ -94,7 +94,7 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 # 安裝相關套件
 建議安裝順序
 1. 安裝ROS
-		請詳閱[install_realsense_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_realsense_xavier.md)
+		請詳閱[install_ros_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_ros_xavier.md)
 2. 安裝Realsense
 		請詳閱[install_realsense_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_realsense_xavier.md)
 3. 改USB頻寬
