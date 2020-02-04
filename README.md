@@ -31,7 +31,7 @@ JetPack 是用來快速初始化Xavier、TX2的軟體，由Nivdia官方發行。
 
 >備註:terminal的路徑要正確；檔案名稱為你那個檔案的名字
 >>圖片為示範
-![image](https://github.com/SamKaiYang/Xavier_install/blob/master/image/a2.png =200x200)
+<img src="https://github.com/SamKaiYang/Xavier_install/blob/master/image/a2.png" width="500">
 
 安裝後就會有SDKManager這個軟體，點開後如上圖。
 點開後的登入介面入下圖，這邊的登入帳號是Nvidia的帳號，要先去官網註冊。
