@@ -110,6 +110,3 @@ $ df -h
 
 $ sudo reboot
 
-		確認顯示是否為408000000
-
-**Fininsh!!  即可連接Realsense看是否還有溢出問題**

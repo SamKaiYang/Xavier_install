@@ -18,5 +18,7 @@ $ ./buildOpenCV.sh
 再來進行測試
 
 $ python3
+
 $ >>import cv2
+
 $ >>cv2.__version__
