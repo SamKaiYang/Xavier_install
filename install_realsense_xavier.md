@@ -49,7 +49,7 @@ $ ./installLibrealsense.sh
 install finish,test realsense driver
 -----------------
 
-$ ./realsense-viewer
+$ realsense-viewer
 
 You may remove all the kernel source using the provided convenience script 'removeAllKernelSources.sh'.
 -----------------
