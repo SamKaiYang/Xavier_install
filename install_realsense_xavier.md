@@ -31,9 +31,9 @@ Flashing the Kernel Image
 
 **Now shutdown the Xavier. Connect the Jetson to the host PC via the USB cable in the same manner as the original JetPack flash. Then place the Xavier into Force Recovery Mode. This is also the same procedure used when flashing JetPack.**
 
-**Go to the host PC. Make sure you make a backup of the original Xavier kernel Image. The Image should be in the host JetPack directory, in the Xavier/Linux_for_Tegra/kernel directory. With the backup secure, you can then copy the new Image that was built on the Jetson in its place.**
+**Go to the host PC. Make sure you make a backup of the original Xavier kernel Image. The Image should be in the host JetPack directory, in the "Xavier/Linux_for_Tegra/kernel" directory. With the backup secure, you can then copy the new Image that was built on the Jetson in its place.**
 
-**Then go up one level to the Linux_for_Tegra directory. You are then ready to flash the Image:**
+**Then go up one level to the "Linux_for_Tegra" directory. You are then ready to flash the Image:**
 
 $ sudo ./flash.sh -k kernel jetson-xavier mmcblk0p1
 
@@ -41,6 +41,8 @@ Build librealsense 2
 -----------------
 
 $ git clone https://github.com/jetsonhacks/installRealSenseSDK.git
+
+$ cd installRealSenseSDK
 
 $ ./installLibrealsense.sh
 
