@@ -12,6 +12,7 @@ Replace xusb_sil_rel_fw_Xavier
 **備份原始文件**
 
 $ sudo su
+
 $ mv /lib/firmware/tegra19x_xusb_firmware /lib/firmware/tegra19x_xusb_firmware_ori
 
 步驟3:
@@ -19,7 +20,7 @@ $ mv /lib/firmware/tegra19x_xusb_firmware /lib/firmware/tegra19x_xusb_firmware_o
 
 **複製xusb_sil_rel_fw_Xavier到路徑/lib/firmware內**
 
-$ cp <WHERE_YOU_MOUNT_PENDRIVE>/xusb_sil_rel_fw_Xavier /lib/firmware/tegra19x_xusb_firmware
+$ cp <請輸入你的隨身碟路徑>/xusb_sil_rel_fw_Xavier /lib/firmware/tegra19x_xusb_firmware
 
 步驟4:
 ---
