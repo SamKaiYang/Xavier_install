@@ -22,3 +22,6 @@ $ python3
 $ >>import cv2
 
 $ >>cv2.__version__
+
+
+參考1. https://blog.csdn.net/qq_36076110/article/details/90482617
