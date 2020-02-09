@@ -22,7 +22,7 @@ $ sudo fdisk -lu
 步驟2:對硬碟進行分區
 ---
 
-$ sudo fdisk /dev/ nvme0n1
+$ sudo fdisk /dev/nvme0n1
 
 **在Command (m for help)提示符後面輸入m，可以查看支持的命令。**
 
