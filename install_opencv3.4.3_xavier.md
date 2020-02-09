@@ -10,12 +10,22 @@ $ git clone https://github.com/jetsonhacks/buildOpenCVXavier
 
 $ cd buildOpenCVXavier
 
+**注意將buildOpenCV.sh裡的DOWNLOAD_OPENCV_EXTRAS設置為YES，不然後面會報錯**
+
+**此外在161行添加-D PYTHON_DEFAULT_EXECUTABLE = / usr / bin / python3 \ 來給python3安裝opencv**
+
 $ git checkout v1.0
 
 $ ./buildOpenCV.sh
 
 會經過約半小時的時間
-再來進行測試
+再來安裝.deb
+
+$ ./buildAndPackageOpenCV.sh
+
+會經過約二十分鐘後完成
+
+**
 
 $ python3
 
