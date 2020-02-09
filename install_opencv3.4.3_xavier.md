@@ -25,7 +25,7 @@ $ ./buildAndPackageOpenCV.sh
 
 會經過約二十分鐘後完成
 
-**
+**測試**
 
 $ python3
 
