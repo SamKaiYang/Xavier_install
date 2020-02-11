@@ -11,6 +11,8 @@ Xavier共有16G運行內存和32G eMMc flash 。
 如何將SSD裝在Xavier上請看此影片
 https://www.youtube.com/watch?v=x0TBTYw7HKs
 
+>>以下步驟適用於若你使用後，發現又要重灌了，以下步驟可以再將SSD洗掉並建置在Xavier的/home目錄下
+
 
 步驟1:查看硬碟所有分區
 ---

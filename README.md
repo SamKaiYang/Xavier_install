@@ -85,6 +85,22 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 # 刷機常遇到的問題
 如若在上一步失敗，那最大的問題大概就是出在你的網路問題，可以在terminal 打ifconfig 看一下你兩個平台接的網路，因為它在灌OS的時候不會有問題，通常都是下一步安裝CUDA、Opencv這邊會出問題。
 如果真的失敗可能就要重頭再來一次，然後確認一下你的網路是否有連接正確，通常這一步都要多嘗試幾次才會過。
+我曾嘗試在主機host打上以下指令
+
+`sudo apt update`
+
+`sudo apt --fix-broken install`
+
+`sudo apt-get install libgconf-2-4 libcanberra-gtk-module`
+
+而Xavier打上以下指令, 較容易成功。
+
+`sudo apt-get update`
+
+`sudo apt-get upgrade`
+
+`sudo apt --fix-broken install`
+
 # Xavier基礎設定
 每一次開機都需要輸入下面這行開啟風扇
 
