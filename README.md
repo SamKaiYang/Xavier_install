@@ -14,6 +14,8 @@ Nvidia-Jetson-AGX-Xavier-TX2-JetPack-4.2配置流程與基礎設定(刷機流程
 1. OpenCV3.4.3安裝
 2. 如何掛載SSD在Xavier上
 
+>>2020/02/13 更新
+1. Ros2 (dashing)
 
 ----
 # 設備需求
@@ -127,4 +129,7 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 		請詳閱[install_opencv3.4.3_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_opencv3.4.3_xavier.md)
 5. 安裝SSD在Xavier上
 		請詳閱[ssd_install_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/ssd_install_xavier.md)
+
+6. 安裝ROS2 
+		請詳閱[install_ros2_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_ros2_xavier.md)
 
