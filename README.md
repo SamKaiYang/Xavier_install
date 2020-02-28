@@ -17,6 +17,9 @@ Nvidia-Jetson-AGX-Xavier-TX2-JetPack-4.2配置流程與基礎設定(刷機流程
 >>2020/02/13 更新
 1. Ros2 (dashing)
 
+>>2020/02/28 更新
+1. 如何配置cv_bridge 在python3使用 
+
 ----
 # 設備需求
 1. Jetson AGX Xavier
@@ -132,4 +135,7 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 
 6. 安裝ROS2 
 		請詳閱[install_ros2_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_ros2_xavier.md)
+
+7. cv_bridge 
+		請詳閱[cv_bridge_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/cv_bridge_xavier.md)
 
