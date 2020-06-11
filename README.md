@@ -1,4 +1,6 @@
-Xavier 安裝懶人包
+Xavier 安裝懶人包(For Jetson AGX Xavier)
+**如果安裝Xaiver nx系統,請參閱**
+[Jetson Xavier NX 系統安裝教學(直接下載映像檔/使用NVIDIA SDK Manager)](https://blog.cavedu.com/2020/05/15/jetson-xavier-nx-sysinstall/)
 ==================
 
 此安裝內容如下
