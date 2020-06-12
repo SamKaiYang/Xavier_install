@@ -2,7 +2,7 @@ install cudnn & Path setting
 -----------------
 **以下設定針對Xaiver NX欲對神經網路進行加速所需的cudnn設定,與nvcc的路徑設定(如果Xavier有遇到類似問題可以嘗試解決)**
 
-#install cudnn
+#Install Cudnn
 
 請至下列網站下載cudnn的tar檔
 https://developer.nvidia.com/cuda-toolkit/arm
@@ -30,7 +30,7 @@ At last,you can see
 
 Test passed!
 
-#enable nvcc
+#Enable nvcc
 
 $ vim ~/.bashrc
 
