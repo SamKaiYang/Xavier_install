@@ -122,17 +122,17 @@ Xavier一開始的畫面如上圖，接著就開始設定，設定好後，它�
 
 # 安裝相關套件
 建議安裝順序
-1. 安裝ROS
+1. 安裝ROS(Jetson AGX Xavier 同 Xavier NX)
 		請詳閱[install_ros_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_ros_xavier.md)
 2. 安裝Realsense
 		請詳閱[install_realsense_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_realsense_xavier.md)
 3. 改USB頻寬
 		請詳閱[usb_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/usb_xavier.md)
-3. 安裝Tensorflow
+3. 安裝Tensorflow(Jetson AGX Xavier & Xavier NX 有一個步驟不同詳下)
 		請詳閱[install_tesnsorflow_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_tesnsorflow_xavier.md)
-4. 安裝OpenCV3.4.3
-		請詳閱[install_opencv3.4.3_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_opencv3.4.3_xavier.md)
-5. 安裝SSD在Xavier上
+4. 安裝OpenCV(可選擇版本)(Jetson AGX Xavier 同 Xavier NX)
+		請詳閱[install_opencv&contrib_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/install_opencv%26contrib_xavier.md)
+5. 安裝SSD在Xavier上(Jetson AGX Xavier 同 Xavier NX)
 		請詳閱[ssd_install_xavier.md](https://github.com/SamKaiYang/Xavier_install/blob/master/ssd_install_xavier.md)
 
 6. 安裝ROS2 

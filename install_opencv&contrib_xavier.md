@@ -77,6 +77,19 @@ $ sudo mv libopencv*  removedopencv
 6. 修改cv_bridge中opencv路徑
 
 **修改 /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake 文件,在 94,96,119 行修改opencv头文件和库文件的路径为/usr/local/include/opencv和/usr/local/lib/libopencv_core.so.3.4.9等。**
+如下
+
+第94行
+
+if(NOT "include;/usr/local/include;/usr/local/include/opencv " STREQUAL " ")
+
+第96行
+
+  set(_include_dirs "include;/usr/local/include;/usr/local/include/opencv")
+
+第119行
+
+set(libraries "cv_bridge;/usr/lib/aarch64-linux-gnu/libopencv_core.so.3.4.9;/usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.3.4.9;/usr/lib/aarch64-linux-gnu/libopencv_imgcodecs.so.3.4.9")
 
 **測試**
 
