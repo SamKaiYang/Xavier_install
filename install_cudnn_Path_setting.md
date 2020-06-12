@@ -38,8 +38,8 @@ $ vim ~/.bashrc
 
 **尾末加上如下,xavier nx cuda版本為10.2**
 
-export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}  
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}  
 
 $ source ~/.bashrc
 
@@ -49,9 +49,9 @@ $ nvcc --version
 
 you can see
 
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2019 NVIDIA Corporation
-Built on Wed_Oct_23_21:14:42_PDT_2019
-Cuda compilation tools, release 10.2, V10.2.89
+nvcc: NVIDIA (R) Cuda compiler driver  
+Copyright (c) 2005-2019 NVIDIA Corporation  
+Built on Wed_Oct_23_21:14:42_PDT_2019  
+Cuda compilation tools, release 10.2, V10.2.89  
 
 
