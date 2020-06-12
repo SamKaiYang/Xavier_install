@@ -1,7 +1,6 @@
 install cudnn & Path setting
 -----------------
-**以下設定針對Xaiver NX欲對神經網路進行加速所需的cudnn設定
-與nvcc的路徑設定(如果Xavier有遇到類似問題可以嘗試解決)
+**以下設定針對Xaiver NX欲對神經網路進行加速所需的cudnn設定,與nvcc的路徑設定(如果Xavier有遇到類似問題可以嘗試解決)**
 
 #install cudnn
 
@@ -39,6 +38,8 @@ $ vim ~/.bashrc
 
 export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+$ source ~/.bashrc
 
 **test**
 
