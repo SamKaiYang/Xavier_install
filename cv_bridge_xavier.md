@@ -7,45 +7,37 @@
 -----
 
 1. apt安裝需要的軟件, xavier平台將ros-kinetic-cv-bridge換為ros-melodic-cv-bridge
-
-$ sudo apt install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-cv-bridge
-
+```
+sudo apt install python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy python3-yaml ros-melodic-cv-bridge
+```
 2. 生成catkin工作空間文件夾並初始化
-
-$ sudo mkdir ~/catkin_workspace
-
-$ cd catkin_workspace
-
-$ sudo mkdir src
-
-$ sudo catkin init
-
+```
+sudo mkdir ~/catkin_workspace
+cd catkin_workspace
+sudo mkdir src
+sudo catkin init
+```
 3. 配置catkin工作空間的python環境變量，需要根據平台的實際路經修改
-
-$ sudo catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
-
-$ sudo catkin config --install
-
+```
+sudo catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
+sudo catkin config --install
+```
 4. 下載cv_bridge的源碼, 地址為https://github.com/ros-perception/vision_opencv.git, 注意注意源代碼存在多個版本分支，ubuntu1604下載kinetic分支; xavier是ubuntu1804，下載melodic.參考教程使用git控制分支，我實際是直接選擇不同的分支下載然後解壓的.這裡列出參考教程命令
-
-$ git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
-
-$ cd src/vision_opencv/
-
-$ apt-cache show ros-melodic-cv-bridge | grep Version (kinetic得到1.12.8, melodic得到1.13.0)
-
-$ git checkout 1.13.0 
-
+```
+git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
+cd src/vision_opencv/
+apt-cache show ros-melodic-cv-bridge | grep Version (kinetic得到1.12.8, melodic得到1.13.0)
+git checkout 1.13.0 
+```
 5. 編譯並安裝
-
-$ cd ../../
-
-$ sudo catkin build cv_bridge 
-
+```
+cd ../../
+sudo catkin build cv_bridge 
+```
 或   
-
-$ sudo catkin build cv_bridge --pre_clean (用於清除安裝失敗遺留的包)
-
+```
+sudo catkin build cv_bridge --pre_clean (用於清除安裝失敗遺留的包)
+```
 若編譯成功，生成的新庫在/home/<user_name>/catkin_worksapce/install/lib/python3/dist-packages/，文件結構如下
 dist-packages
             ├── cv_bridge
@@ -60,15 +52,15 @@ dist-packages
             └── cv_bridge-1.13.0.egg-info
 
 6. 添加python庫路徑
-
-$ source install/setup.bash --extend (xavier成功)
-
-
+```
+source install/setup.bash --extend (xavier成功)
+```
 **測試**
-
+```
 $ python3
 >>> from cv_bridge.boost.cv_bridge_boost import getCvType 
 >>> 
+```
 **無錯誤提示**
 
 

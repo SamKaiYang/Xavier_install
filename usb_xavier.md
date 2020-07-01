@@ -10,25 +10,24 @@ Replace xusb_sil_rel_fw_Xavier
 ---
 
 **備份原始文件**
-
-$ sudo su
-
-$ mv /lib/firmware/tegra19x_xusb_firmware /lib/firmware/tegra19x_xusb_firmware_ori
-
+```
+sudo su
+mv /lib/firmware/tegra19x_xusb_firmware /lib/firmware/tegra19x_xusb_firmware_ori
+```
 步驟3:
 ---
 
 **複製xusb_sil_rel_fw_Xavier到路徑/lib/firmware內**
-
-$ cp <請輸入你的隨身碟路徑>/xusb_sil_rel_fw_Xavier /lib/firmware/tegra19x_xusb_firmware
-
+```
+cp <請輸入你的隨身碟路徑>/xusb_sil_rel_fw_Xavier /lib/firmware/tegra19x_xusb_firmware
+```
 步驟4:
 ---
 
 **重新開機**
-
-$ sudo reboot
-
+```
+sudo reboot
+```
 步驟5:
 ---
 
@@ -48,17 +47,13 @@ Remove all the USB device and confirm that xhci enters ELPG
 ---
 
 **增加falcon clock頻率**
-
-$ sudo su
-
-$ cd /sys/kernel/debug/bpmp/debug/clk/xusb_falcon
-
-$ echo 1 > state
-
-$ echo 408000000 > rate
-
-$ cat rate
-
+```
+sudo su
+cd /sys/kernel/debug/bpmp/debug/clk/xusb_falcon
+echo 1 > state
+echo 408000000 > rate
+cat rate
+```
 		確認顯示是否為408000000
 
 **Fininsh!!  即可連接Realsense看是否還有溢出問題**
