@@ -72,5 +72,7 @@ Intel Realsense D435i testing
 roslaunch realsense2_camera demo_pointcloud.launch
 ```
 
+https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md
+
 
 
