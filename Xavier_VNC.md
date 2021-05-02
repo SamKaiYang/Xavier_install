@@ -1,3 +1,12 @@
+VNC遠程控制
+1.安裝vino
+
+```bash
+sudo apt update
+sudo apt install vino
+```
+
+2.設置Enable VNC
 ```bash
 sudo ln -s …/vino-server.service /usr/lib/systemd/user/graphical-session.target.wants
 ```
