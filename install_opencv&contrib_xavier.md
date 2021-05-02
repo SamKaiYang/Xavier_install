@@ -44,7 +44,7 @@ cd build
 ```
 cmake -D CMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local/ -DINSTALL_PYTHON_EXAMPLES=ON -DINSTALL_C_EXAMPLES=ON -DPYTHON_EXCUTABLE=/usr/bin/python -DOPENCV_EXTRA_MODULES_PATH=~/opencvbuild/opencv_contrib-3.2.0/modules -DWITH_CUDA=OFF -DWITH_CUFFT=OFF -DWITH_CUBLAS=OFF -DWITH_TBB=ON -DWITH_V4L=ON -DWITH_QT=OFF -DWITH_GTK=ON -DWITH_OPENGL=ON -DENABLE_PRECOMPILED_HEADERS=OFF -DBUILD_EXAMPLES=ON ..
 
-make -j8
+make -j$(($(nproc)-1))
 sudo make install
 ```
 6. 修改cv_bridge中opencv路徑
@@ -58,7 +58,7 @@ if(NOT "include;/usr/local/include;/usr/local/include/opencv2 " STREQUAL " ")
 第96行
   set(_include_dirs "include;/usr/local/include;/usr/local/include/opencv2")
 第119行
-set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.9;/usr/local/lib/libopencv_imgproc.so.3.4.9;/usr/local/lib/libopencv_imgcodecs.so.3.4.9")
+set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.2.0;/usr/local/lib/libopencv_imgproc.so.3.2.0;/usr/local/lib/libopencv_imgcodecs.so.3.2.0")
 ```
 **測試**
 ```
