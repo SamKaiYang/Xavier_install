@@ -23,23 +23,28 @@ sudo apt-get install qtbase5-examples
 4. Download & install opencv
 
 **然後下載[opencvx.x.x]和對應的[opencv_contribx.x.x]，都解壓。(根據自己需求要安裝哪個版本，路徑如下)**
+```
+git clone https://github.com/opencv/opencv.git
+git 
 
-請詳閱[opencvx.x.x](https://github.com/opencv/opencv/releases)
-
-請詳閱[opencv_contribx.x.x](https://github.com/opencv/opencv_contrib/releases)
-
-**在這裡，我們opencv解壓在〜/ opencvbuild / opencv-x.x.x路徑中，opencv_contrib解壓在〜/ opencvbuild / opencv_contrib-x.x.x路徑中。**
-
-**以版本3.4.9為例**
+git clone https://github.com/opencv/opencv_contrib.git
 
 ```
-cd ~/opencvbuild/opencv-3.4.9
+**在這裡，我們opencv在〜/ opencvbuild / opencv-x.x.x路徑中，opencv_contrib解壓在〜/ opencvbuild / opencv_contrib-x.x.x路徑中。**
+
+**以版本3.2.0為例**
+
+```
+cd ~/opencvbuild/opencv_contrib-3.2.0
+git checkout 3.2.0
+cd ~/opencvbuild/opencv-3.2.0
+git checkout 3.2.0
 mkdir build
 cd build
 ```
 # 上述是基本操作
 ```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local/ -DINSTALL_PYTHON_EXAMPLES=ON -DINSTALL_C_EXAMPLES=ON -DPYTHON_EXCUTABLE=/usr/bin/python -DOPENCV_EXTRA_MODULES_PATH=~/opencvbuild/opencv_contrib-3.4.9/modules -DWITH_CUDA=OFF -DWITH_CUFFT=OFF -DWITH_CUBLAS=OFF -DWITH_TBB=ON -DWITH_V4L=ON -DWITH_QT=ON -DWITH_GTK=ON -DWITH_OPENGL=ON -DENABLE_PRECOMPILED_HEADERS=OFF -DBUILD_EXAMPLES=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local/ -DINSTALL_PYTHON_EXAMPLES=ON -DINSTALL_C_EXAMPLES=ON -DPYTHON_EXCUTABLE=/usr/bin/python -DOPENCV_EXTRA_MODULES_PATH=~/opencvbuild/opencv_contrib-3.2.0/modules -DWITH_CUDA=OFF -DWITH_CUFFT=OFF -DWITH_CUBLAS=OFF -DWITH_TBB=ON -DWITH_V4L=ON -DWITH_QT=OFF -DWITH_GTK=ON -DWITH_OPENGL=ON -DENABLE_PRECOMPILED_HEADERS=OFF -DBUILD_EXAMPLES=ON ..
 
 make -j8
 sudo make install
@@ -66,7 +71,7 @@ $ >>cv2.__version__
 
 7. 若須卸載opencv
 ```
-cd ~/opencvbuild/opencv-3.4.9/build
+cd ~/opencvbuild/opencv-3.2.0/build
 sudo make uninstall
 ```
 
