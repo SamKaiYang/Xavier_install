@@ -22,11 +22,9 @@ sudo apt-get install qtbase5-examples
 ```
 4. Download & install opencv
 
-**然後下載[opencvx.x.x]和對應的[opencv_contribx.x.x]，都解壓。(根據自己需求要安裝哪個版本，路徑如下)**
+**然後下載[opencvx.x.x]和對應的[opencv_contribx.x.x]**
 ```
 git clone https://github.com/opencv/opencv.git
-git 
-
 git clone https://github.com/opencv/opencv_contrib.git
 
 ```
