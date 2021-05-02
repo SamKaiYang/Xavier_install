@@ -1,78 +1,76 @@
 **Note** 
-> Starting with L4T 32.2.1 (JetPack 4.2) on the NVIDIA Jetsons
+> test on (JetPack 4.4) NVIDIA Jetsons
 > check kernel version 4.9 
 
-clone buildLibrealsense2Xavier file
------------------
-```
-cd $HOME
-git clone https://github.com/jetsonhacks/buildLibrealsense2Xavier
-cd buildLibrealsense2Xavier
-```
-Build Kernel and Modules
------------------
+## Building from Source using Native Backend
+ 
+ **Use the V4L Native backend by applying the kernel patching**
+ 
+   The method was verified with **Jetson AGX** boards with JetPack **4.2.3**[L4T 32.2.1,32.2.3], **4.3**[L4T 32.3.1] and **4.4**[L4T 32.4.3].
+   
+   The medhoe has not yet been verified on the **Jetson Nano** board.
+  
+  * **Prerequisite**
+  
+    * Verify the board type and Jetpack versions compatibility.  
+    * Verify internet connection.  
+    * Verify the available space on flash, the patching process requires **~2.5Gb** free space  
+       >df -h
+        
+    * Configure the Jetson Board into Max power mode (desktop -> see the upper right corner)  
+    * Disconnect attached USB/UVC cameras (if any).  
+     
+  * **Build and Patch Kernel Modules for Jetson L4T** 
+  
+    1. Navigate to the root of libreansense2 directory.  
+    2. Run the script (note the ending characters - `L4T`)  
+    ```
+    ./scripts/patch-realsense-ubuntu-L4T.sh  
+    ```
+    * The script will run for about 30 minutes depending on internet speed and perform the following tasks:  
+    
+      a. Fetch the kernel source trees required to build the kernel and its modules.  
+      b. Apply Librealsense-specific kernel patches and build the modified kernel modules.  
+      c. Try to insert the modules into the kernel.  
 
-**The first step is to build the needed modules and a new kernel. Also, in order to have the Xavier understand the different video formats, there are some patches to apply to the module source code.**
+  * **Build librealsense2 SDK**  
+  
+    1. Navigate to the SDK's root directory.  
+    ```
+    sudo apt-get install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev -y
+    ./scripts/setup_udev_rules.sh  
+    mkdir build && cd build  
+    cmake .. -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DFORCE_RSUSB_BACKEND=false -DBUILD_WITH_CUDA=true && make -j$(($(nproc)-1)) && sudo make install
+    ```
+       The CMAKE `-DBUILD_WITH_CUDA=true` flag assumes CUDA modules are installed. If not, please reconnect the board to the Ubuntu Host PC and use NVIDIA `SDK Manager` tool to install the missing components.
 
-**There are no librealsense 2 patches available to directly patch the Xavier, because it is running kernel version 4.9. This is between the different kernel versions which have patch revisions. For this reason, the patches sub-directory contains artisan patches, exquisitely crafted to upgrade the Jetson Xavier to run the librealsense 2 libraries.**
+  * **Connect Realsense Device, run `realsense-viewer` and inspect the results**
+ 
 
-**Some of the patches actually change header files which touch some modules which are built in to the kernel. That is why the kernel Image needs to be updated. If the kernel Image is not updated, the logs get cluttered with a large number of warnings about incorrect video formats being present.**
+Reference:https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md
 
-**In order to patch and rebuild the kernel Image, modules and then install the modules:**
-```
-./buildPatchedKernel.sh
-```
-Flashing the Kernel Image
------------------
 
-**Once the script is finished, you can now flash the new Image on to the Jetson. Use a file transfer utility such as scp or ftp to transfer the new Image file to the host PC with the JetPack installer. Sneakernet works too.**
+## install RealSense ROS
+  * **clone**
+    ```
+    git clone https://github.com/jetsonhacks/installRealSenseROS.git
+    ```
+  * **fix content**
+    ```
+    cd installRealSenseROS
+    gedit installRealSenseROS.sh
+    #註解下面兩行
+    line#13 REALSENSE_ROS_VERSION=2.2.11
+    line#83 git checkout $REALSENSE_ROS_VERSION
+    ```
+  * **To install:**
+    ```
+    ./installRealSenseROS.sh <catkin_ws_name>
+    ```
+    The script 'disableAutosuspend.sh' simply turns off the USB autosuspend setting on the Jetson so that the camera is always available.
 
-**Now shutdown the Xavier. Connect the Jetson to the host PC via the USB cable in the same manner as the original JetPack flash. Then place the Xavier into Force Recovery Mode. This is also the same procedure used when flashing JetPack.**
 
-**Go to the host PC. Make sure you make a backup of the original Xavier kernel Image. The Image should be in the host JetPack directory, in the "Xavier/Linux_for_Tegra/kernel" directory. With the backup secure, you can then copy the new Image that was built on the Jetson in its place.**
-
-**Then go up one level to the "Linux_for_Tegra" directory. You are then ready to flash the Image:**
-```
-sudo ./flash.sh -k kernel jetson-xavier mmcblk0p1
-```
-Build librealsense 2
------------------
-```
-git clone https://github.com/jetsonhacks/installRealSenseSDK.git
-cd installRealSenseSDK
-./installLibrealsense.sh
-```
-install finish,test realsense driver
------------------
-```
-realsense-viewer
-```
-You may remove all the kernel source using the provided convenience script 'removeAllKernelSources.sh'.
------------------
-```
-cd buildLibrealsense2Xavier
-./removeAllKernelSources.sh
-```
-realsense-ros using
------------------
-```
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-catkin_init_workspace .
-git clone https://github.com/IntelRealSense/realsense-ros
-cd realsense-ros
-git checkout -b 2.2.7 2.2.7
-sudo apt install ros-melodic-ddynamic-reconfigure
-cd ~/catkin_ws
-catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
-```
-Intel Realsense D435i testing
------------------
-```
-roslaunch realsense2_camera demo_pointcloud.launch
-```
-
-https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md
+Reference:https://github.com/jetsonhacks/installRealSenseROS.git
 
 
 
