@@ -22,6 +22,9 @@ Nvidia-Jetson-AGX-Xavier-TX2-JetPack-4.2配置流程與基礎設定(刷機流程
 >>2020/02/28 更新
 1. 如何配置cv_bridge 在python3使用 
 
+>>2022/09/08 更新
+1. Ros2 (foxy)
+
 ----
 # 設備需求
 1. Jetson AGX Xavier
